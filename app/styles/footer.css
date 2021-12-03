@@ -1,0 +1,20 @@
+.footer-component {
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  min-height: 54px;
+  padding: 0 43.5px;
+}
+
+.footer-component nav {
+  height: 100%;
+  width: 100%;
+}
+.footer-component nav ul {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  padding: 0;
+  margin: 0;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+}

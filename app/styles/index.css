@@ -1,0 +1,52 @@
+.index-main {
+  flex-grow: 1;
+  overflow: auto;
+  padding: 16px;
+}
+
+.index-header {
+  padding: 8px 16px;
+}
+
+.index-header-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  margin-top: 16px;
+}
+
+.index-header-heading > div {
+  display: flex;
+  align-items: center;
+}
+.index-header-heading h1 {
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  color: #1d2939;
+  font-weight: bold;
+  line-height: 24px;
+}
+
+.index-header-heading button {
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+  border: none;
+  color: #039855;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.index-search {
+  height: 44px;
+  border: 1px solid #e4e7ec;
+  border-radius: 4px;
+  padding: 12px;
+  padding-left: 40px;
+  font-size: 14px;
+  line-height: 20px;
+  color: #667085;
+}
