@@ -1,0 +1,92 @@
+/**
+ * QUANTITY BUTTON
+ */
+.quantity-button {
+  height: 30px;
+  padding: 8px 7px;
+  background-color: white;
+  box-shadow: 0px 2px 4px rgba(16, 24, 40, 0.15);
+  border-radius: 8px 0px;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #039855;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  letter-spacing: 0.01em;
+  color: #ffffff;
+  overflow: hidden;
+}
+
+.quantity-button-expanded {
+  min-width: 84px;
+}
+
+.quantity-button button {
+  background-color: white;
+  margin: -8px -7px;
+  padding: 8px 7px;
+  border: none;
+  outline: none;
+}
+
+.quantity-button button:active {
+  transform: scale(1.01);
+  background-color: #fafafa;
+}
+
+.quantity-button-normal {
+  height: 40px;
+  width: 80px;
+}
+
+.quantity-button-normal button {
+  background: #ffffff;
+  border: 1px solid #f2f4f7;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  align-items: center;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  letter-spacing: 0.01em;
+  color: #039855;
+  padding: 10.7px 17px;
+}
+
+.quantity-button-normal svg {
+  margin-left: 4px;
+}
+
+.quantity-button-normal.quantity-button-expanded {
+  background: #f9fafb;
+  border: 1px solid #f2f4f7;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  letter-spacing: 0.01em;
+  color: #1d2939;
+}
+
+.quantity-button-normal.quantity-button-expanded button {
+  background-color: white;
+  border: none;
+  border-radius: 0px;
+  height: 100%;
+  width: 26px;
+  padding: 0;
+}
+
+.quantity-button-normal button:active {
+  transform: scale(1.01);
+  background-color: #fafafa;
+}

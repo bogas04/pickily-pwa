@@ -1,0 +1,123 @@
+.product-item {
+  position: relative;
+}
+
+.product-item-img-wrapper {
+  border-radius: 8px;
+}
+
+.product-item h3 {
+  height: 32px;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+  margin-top: 8px;
+  margin-bottom: 3px;
+  color: #1d2939;
+  font-weight: 600;
+  display: flex;
+  align-items: flex-end;
+  white-space: pre-line;
+  text-overflow: ellipsis;
+}
+
+.product-item .inline-quantity-button {
+  position: absolute;
+  right: -4px;
+  top: 72px;
+}
+
+.product-item-variant {
+  border: none;
+  font-size: 12px;
+  line-height: 16px;
+  color: #667085;
+}
+
+.product-item-tag {
+  display: flex;
+  margin-top: 4px;
+  align-items: center;
+  font-size: 12px;
+  line-height: 16px;
+  color: #667085;
+}
+
+.product-item-tag svg {
+  margin-right: 2px;
+}
+.product-item-price strong {
+  font-weight: bold;
+  font-size: 13px;
+  line-height: 20px;
+  letter-spacing: 0.01em;
+  color: #101828;
+}
+
+.product-item-price span {
+  margin-left: 4px;
+  font-size: 12px;
+  line-height: 16px;
+  text-decoration-line: line-through;
+  color: #667085;
+}
+
+.product-item-price-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.product-item-normal {
+  padding: 12px 10px;
+}
+
+.product-item-normal h3 {
+  height: 40px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  display: flex;
+  align-items: flex-end;
+  color: #101828;
+}
+
+.product-item-normal img {
+  height: 122px;
+  width: 122px;
+}
+
+.product-item-normal .product-item-price {
+  display: flex;
+  flex-direction: column;
+}
+.product-item-normal .product-item-price strong {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  color: #101828;
+}
+
+.product-item-normal .product-item-price span {
+  margin-left: 0;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 20px;
+  text-decoration-line: line-through;
+  color: #667085;
+}
+
+.product-item-normal .product-item-price-wrapper {
+  margin-top: 12px;
+}
+
+.product-item-normal .product-item-tag {
+  margin-top: 12px;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 16px;
+  color: #667085;
+}
+
+.product-item-normal .product-item-tag svg {
+  margin-right: 4.2px;
+}
