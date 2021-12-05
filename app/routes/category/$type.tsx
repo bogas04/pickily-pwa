@@ -10,10 +10,13 @@ export default function Category() {
 
   useEffect(() => {
     if (typeof searchParams.get("category") !== "string") {
-      setSearchParams({
-        ...Object.fromEntries(searchParams.entries()),
-        category: "0",
-      });
+      setSearchParams(
+        {
+          ...Object.fromEntries(searchParams.entries()),
+          category: "0",
+        },
+        { replace: true }
+      );
     }
   }, []);
 
@@ -122,10 +125,13 @@ export default function Category() {
             >
               <button
                 onClick={() =>
-                  setSearchParams({
-                    ...Object.fromEntries(searchParams.entries()),
-                    category: String(index),
-                  })
+                  setSearchParams(
+                    {
+                      ...Object.fromEntries(searchParams.entries()),
+                      category: String(index),
+                    },
+                    { replace: true }
+                  )
                 }
               >
                 <img src={c.imageUrl} />
