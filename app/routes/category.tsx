@@ -36,13 +36,13 @@ export default function () {
     <ScreenTransition>
       <header>
         <div className="title">
-          <Link to="..">
+          <Link to=".." style={{ display: "flex" }}>
             <Back />
           </Link>
           <h1>{title || "All Items"}</h1>
         </div>
         <div>
-          <button className="search">
+          <button className="search" style={{ display: "flex" }}>
             <Search />
           </button>
         </div>
