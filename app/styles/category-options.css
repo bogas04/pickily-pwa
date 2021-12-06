@@ -1,0 +1,102 @@
+.category-options-overlay {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: #101828;
+  opacity: 0.5;
+}
+
+.category-options {
+  background-color: white;
+  position: fixed;
+  z-index: 2;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 22px 0;
+  border-radius: 8px 8px 0 0;
+}
+
+.category-options .header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 0 16px 16px;
+  border-bottom: 1px solid #f2f4f7;
+}
+.category-options .header h6 {
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 16px;
+  color: #667085;
+}
+
+.category-options .header h5 {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  color: #101828;
+}
+
+.category-options .done {
+  width: calc(100% - 32px);
+  padding: 12px;
+  margin: 0 16px;
+  border: none;
+  background: #039855;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  letter-spacing: 0.01em;
+  color: #ffffff;
+}
+
+.category-options ol {
+  list-style: none;
+  overflow: auto;
+  margin-bottom: 16px;
+}
+
+.category-options ol li {
+  display: flex;
+  justify-content: space-between;
+  align-self: stretch;
+  padding: 16px;
+  border-bottom: 1px solid #f2f4f7;
+}
+
+.category-options ol li .price {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.category-options ol li .price strong {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: right;
+  color: #101828;
+}
+
+.category-options ol li .value {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  color: #344054;
+}
+
+.category-options ol li .tag {
+  display: flex;
+  align-items: center;
+  margin-top: 2px;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 16px;
+  color: #667085;
+}

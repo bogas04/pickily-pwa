@@ -1,5 +1,13 @@
-import { useEffect, useState } from "react";
-import { json, useLoaderData, useParams, useSearchParams } from "remix";
+import React, { useEffect, useState } from "react";
+import {
+  useNavigate,
+  json,
+  Outlet,
+  useLocation,
+  useLoaderData,
+  useParams,
+  useSearchParams,
+} from "remix";
 import type { LoaderFunction } from "remix";
 import {
   Category,
@@ -9,6 +17,7 @@ import {
 } from "~/api/category.server";
 import { sleep } from "~/api/home.server";
 import ProductItem from "~/components/product-item";
+import { AnimatePresence, AnimateSharedLayout } from "framer-motion";
 
 // https://remix.run/api/conventions#loader
 export const loader: LoaderFunction = async ({ params }) => {
@@ -26,15 +35,20 @@ export default function Category() {
   const { categories, items } =
     useLoaderData<{ categories: Category[]; items: CategoryItem[] }>();
 
+  const { state: currentState } = useLocation();
+  const navigate = useNavigate();
+  const updateCategory = (category: string) =>
+    setSearchParams(
+      {
+        ...Object.fromEntries(searchParams.entries()),
+        category,
+      },
+      { replace: true, state: currentState }
+    );
+
   useEffect(() => {
     if (typeof searchParams.get("category") !== "string") {
-      setSearchParams(
-        {
-          ...Object.fromEntries(searchParams.entries()),
-          category: "0",
-        },
-        { replace: true }
-      );
+      updateCategory("0");
     }
   }, []);
 
@@ -47,59 +61,62 @@ export default function Category() {
   );
 
   return (
-    <div className="section">
-      <div className="sidebar">
-        <ol>
-          {categories.map((c, index) => (
-            <li
-              key={c.title}
-              className={
-                searchParams.get("category") === String(index) ? "selected" : ""
-              }
-            >
-              <button
-                onClick={() =>
-                  setSearchParams(
-                    {
-                      ...Object.fromEntries(searchParams.entries()),
-                      category: String(index),
-                    },
-                    { replace: true }
-                  )
+    <AnimateSharedLayout>
+      <div className="section">
+        <div className="sidebar">
+          <ol>
+            {categories.map((c, index) => (
+              <li
+                key={c.title}
+                className={
+                  searchParams.get("category") === String(index)
+                    ? "selected"
+                    : ""
                 }
               >
-                <img src={c.imageUrl} />
-                {c.title}
-              </button>
-            </li>
-          ))}
-        </ol>
-      </div>
-      <div className="content">
-        {chunks.map((items) => (
-          <div className="items-row">
-            {(items.filter(Boolean) as CategoryItem[]).map((i, index) => {
-              const [qty, setQty] = useState(0);
-              const onPlus = () => setQty((q) => q + 1);
-              const onMinus = () => setQty((q) => q - 1);
-              const [selectedVariant, setVariant] = useState(i.variants[0]);
+                <button onClick={() => updateCategory(String(index))}>
+                  <img src={c.imageUrl} />
+                  {c.title}
+                </button>
+              </li>
+            ))}
+          </ol>
+        </div>
+        <div className="content">
+          {chunks.map((items) => (
+            <div className="items-row">
+              {(items.filter(Boolean) as CategoryItem[]).map((i, index) => {
+                const [qty, setQty] = useState(0);
+                const onPlus = () => {
+                  if (i.variants.length > 1) {
+                    navigate(`options?item=${JSON.stringify(i)}`);
+                    return;
+                  }
+                  return setQty((q) => q + 1);
+                };
+                const onMinus = () => setQty((q) => q - 1);
+                const [selectedVariant, setVariant] = useState(i.variants[0]);
 
-              return (
-                <ProductItem
-                  data={i}
-                  variant={selectedVariant}
-                  setVariant={setVariant}
-                  onPlus={onPlus}
-                  onMinus={onMinus}
-                  qty={qty}
-                  size="normal"
-                  className="category-product-item"
-                />
-              );
-            })}
-          </div>
-        ))}
+                return (
+                  <ProductItem
+                    data={i}
+                    variant={selectedVariant}
+                    setVariant={setVariant}
+                    onPlus={onPlus}
+                    onMinus={onMinus}
+                    qty={qty}
+                    size="normal"
+                    className="category-product-item"
+                  />
+                );
+              })}
+            </div>
+          ))}
+        </div>
+        <AnimatePresence>
+          <Outlet />
+        </AnimatePresence>
       </div>
-    </div>
+    </AnimateSharedLayout>
   );
 }

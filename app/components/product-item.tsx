@@ -2,8 +2,11 @@ import React from "react";
 import { HomeWidgetsResponse } from "~/api/home.server";
 import { Bolt, Sunshine } from "./icons";
 import { QuantitySelector, QuantitySelectorProps } from "./quantity-selector";
+import { createDomMotionComponent } from "framer-motion";
 
 export { default as productItemStylesUrl } from "~/styles/product-item.css";
+
+const MotionImage = createDomMotionComponent("img");
 
 export default function ProductItem({
   data,
@@ -87,7 +90,11 @@ export default function ProductItem({
     return (
       <section className={`product-item-normal ${className}`}>
         <div className="product-item-img-wrapper">
-          <img src={data.imageUrl} alt={`Picture of ${data.title}`} />
+          <MotionImage
+            src={data.imageUrl}
+            alt={`Picture of ${data.title}`}
+            layoutId={`photo-${data.id}`}
+          />
         </div>
         <h3>{data.title}</h3>
         {data.variants.length === 1 ? (

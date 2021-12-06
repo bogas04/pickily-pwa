@@ -2,10 +2,6 @@
   position: relative;
 }
 
-.product-item-img-wrapper {
-  border-radius: 8px;
-}
-
 .product-item h3 {
   height: 32px;
   font-weight: 600;
@@ -81,7 +77,11 @@
   color: #101828;
 }
 
-.product-item-normal img {
+.product-item-img-wrapper {
+  border-radius: 8px;
+}
+
+.product-item-normal .product-item-img-wrapper img {
   height: 122px;
   width: 122px;
 }
