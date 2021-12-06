@@ -10,13 +10,6 @@ export type CategoryItem = Extract<
   { type: "buy-again" }
 >["items"][0];
 
-function shuffleArray<T extends Array<any>>(array: T) {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
-  }
-  return array;
-}
 export async function getCategoryItems(id: string) {
   const items: CategoryItem[] = [
     {
@@ -54,10 +47,12 @@ export async function getCategoryItems(id: string) {
       discountPercentage: 25,
       variants: [{ value: "5 Kg", price: 325, discountedPrice: 222 }],
     },
+  ];
+  const items2: CategoryItem[] = [
     {
       id: id + "-5",
-      title: "Fresh Pomegranate",
-      imageUrl: "/img/pomegranate.png",
+      title: "Leaf",
+      imageUrl: "/img/leaf.png",
       tag: "instant",
       discountPercentage: 25,
       variants: [
@@ -67,31 +62,77 @@ export async function getCategoryItems(id: string) {
     },
     {
       id: id + "-6",
-      title: "Cherry",
-      imageUrl: "/img/cherry.png",
+      title: "Atta",
+      imageUrl: "/img/atta.png",
       tag: "morning",
       discountPercentage: 25,
       variants: [{ value: "5 Kg", price: 325, discountedPrice: 222 }],
     },
     {
       id: id + "-7",
-      title: "Coconut",
+      title: "Madhur Sugar",
       tag: "instant",
-      imageUrl: "/img/coconut.png",
+      imageUrl: "/img/madhur-sugar.png",
       discountPercentage: 25,
       variants: [{ value: "5 Kg", price: 325, discountedPrice: 222 }],
     },
     {
       id: id + "-8",
-      title: "Pear",
-      imageUrl: "/img/pear.png",
+      title: "Onions",
+      imageUrl: "/img/onion.png",
       tag: "instant",
       discountPercentage: 25,
-      variants: [{ value: "5 Kg", price: 325, discountedPrice: 222 }],
+      variants: [
+        { value: "5 Kg", price: 325, discountedPrice: 222 },
+        { value: "2 Kg", price: 100, discountedPrice: 89 },
+      ],
     },
   ];
 
-  return { data: shuffleArray(items) };
+  const items3: CategoryItem[] = [
+    {
+      id: id + "-9",
+      title: "Pumpkin",
+      imageUrl: "/img/pumpkin.png",
+      tag: "instant",
+      discountPercentage: 25,
+      variants: [
+        { value: "5 Kg", price: 325, discountedPrice: 222 },
+        { value: "1 Kg", price: 82, discountedPrice: 44 },
+      ],
+    },
+    {
+      id: id + "-10",
+      title: "Snake Gourd",
+      imageUrl: "/img/snake.png",
+      tag: "morning",
+      discountPercentage: 25,
+      variants: [{ value: "5 Kg", price: 325, discountedPrice: 222 }],
+    },
+    {
+      id: id + "-11",
+      title: "Suji",
+      tag: "instant",
+      imageUrl: "/img/suji.png",
+      discountPercentage: 25,
+      variants: [{ value: "5 Kg", price: 325, discountedPrice: 222 }],
+    },
+    {
+      id: id + "-12",
+      title: "Tea",
+      imageUrl: "/img/tea.png",
+      tag: "instant",
+      discountPercentage: 25,
+      variants: [
+        { value: "5 Kg", price: 325, discountedPrice: 222 },
+        { value: "2 Kg", price: 100, discountedPrice: 89 },
+      ],
+    },
+  ];
+
+  return {
+    data: Number(id) % 2 === 0 ? items.concat(items3) : items2.concat(items3),
+  };
 }
 
 export async function getCategories() {
