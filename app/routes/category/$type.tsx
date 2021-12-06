@@ -35,7 +35,7 @@ export const loader: LoaderFunction = async ({ params, request }) => {
 export default function Category() {
   const { type } = useParams();
   const [searchParams, setSearchParams] = useSearchParams();
-  const id = searchParams.get("id");
+  const id = searchParams.get("category");
   const { categories, items } =
     useLoaderData<{ categories: Category[]; items: CategoryItem[] }>();
 
@@ -91,7 +91,7 @@ export default function Category() {
                 const [qty, setQty] = useState(0);
                 const prefetch =
                   i.variants.length > 1
-                    ? `options?item=${JSON.stringify(i)}`
+                    ? `options?item=${JSON.stringify(i)}&category=${id}`
                     : null;
                 const onPlus = () => {
                   if (prefetch) {
