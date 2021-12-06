@@ -3,6 +3,7 @@ import { Link, Outlet, useLocation } from "remix";
 import { Back, Search } from "~/components/icons";
 import { productItemStylesUrl } from "~/components/product-item";
 import { quantitySelectorStylesUrl } from "~/components/quantity-selector";
+import { ScreenTransition } from "~/components/ScreenTransition";
 import styles from "~/styles/category.css";
 
 // https://remix.run/api/conventions#links
@@ -24,7 +25,7 @@ export let links: LinksFunction = () => [
 export default function () {
   const { state } = useLocation();
   return (
-    <>
+    <ScreenTransition>
       <header>
         <div className="title">
           <Link to="..">
@@ -41,6 +42,6 @@ export default function () {
       <main>
         <Outlet />
       </main>
-    </>
+    </ScreenTransition>
   );
 }

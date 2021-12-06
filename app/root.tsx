@@ -1,5 +1,4 @@
 import {
-  Link,
   Links,
   LiveReload,
   Meta,
@@ -11,7 +10,7 @@ import {
 import type { LinksFunction } from "remix";
 
 import globalStylesUrl from "~/styles/global.css";
-import darkStylesUrl from "~/styles/dark.css";
+import { AnimateSharedLayout } from "framer-motion";
 
 // https://remix.run/api/app#links
 export let links: LinksFunction = () => {
@@ -31,7 +30,9 @@ export default function App() {
   return (
     <Document>
       <Layout>
-        <Outlet />
+        <AnimateSharedLayout>
+          <Outlet />
+        </AnimateSharedLayout>
       </Layout>
     </Document>
   );

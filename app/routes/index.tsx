@@ -8,6 +8,9 @@ import { Bolt, Caret, FreeDelivery, Search } from "~/components/icons";
 import { productItemStylesUrl } from "~/components/product-item";
 import { quantitySelectorStylesUrl } from "~/components/quantity-selector";
 import styles from "~/styles/index.css";
+import { createDomMotionComponent } from "framer-motion";
+import { ScreenTransition } from "~/components/ScreenTransition";
+const MotionDiv = createDomMotionComponent("div");
 
 // https://remix.run/api/conventions#meta
 export let meta: MetaFunction = () => {
@@ -54,7 +57,7 @@ export default function Index() {
   const data = useLoaderData<HomeWidgetsResponse>();
 
   return (
-    <>
+    <ScreenTransition>
       <header className="index-header">
         <div className="index-header-heading">
           <div>
@@ -86,6 +89,6 @@ export default function Index() {
         <HomeWidgets data={data} />
       </main>
       <Footer />
-    </>
+    </ScreenTransition>
   );
 }
