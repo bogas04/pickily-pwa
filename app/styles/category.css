@@ -43,7 +43,10 @@ main {
 .sidebar {
   border-right: 1px solid #f9fafb;
   overflow: hidden;
+  height: calc(100vh - 60px);
   min-width: 80px;
+  content-visibility: auto;
+  contain-intrinsic-size: 1000px;
 }
 
 .sidebar ol {
@@ -107,7 +110,7 @@ main {
   align-items: stretch;
   flex-grow: 1;
   overflow: auto;
-  height: 100%;
+  height: calc(100vh - 60px);
   width: 100%;
 }
 

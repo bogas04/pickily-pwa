@@ -2,6 +2,8 @@
   flex-grow: 1;
   overflow: auto;
   padding: var(--gutter);
+  content-visibility: auto;
+  contain-intrinsic-size: 1000px;
 }
 
 .index-header {
