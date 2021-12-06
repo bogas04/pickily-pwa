@@ -18,8 +18,8 @@ import {
 } from "~/api/category.server";
 import { sleep } from "~/api/home.server";
 import ProductItem from "~/components/product-item";
-import { AnimatePresence } from "framer-motion";
 import { DeferRender } from "~/components/defer-render";
+import { AnimateSharedLayout } from "framer-motion";
 
 // https://remix.run/api/conventions#loader
 export const loader: LoaderFunction = async ({ params, request }) => {
@@ -36,6 +36,7 @@ export default function Category() {
   const { type } = useParams();
   const [searchParams, setSearchParams] = useSearchParams();
   const id = searchParams.get("category");
+  const title = searchParams.get("title");
   const { categories, items } =
     useLoaderData<{ categories: Category[]; items: CategoryItem[] }>();
 
@@ -65,67 +66,74 @@ export default function Category() {
   );
 
   return (
-    <div className="section">
-      <div className="sidebar">
-        <ol>
-          {categories.map((c, index) => (
-            <li
-              key={c.title}
-              className={
-                searchParams.get("category") === String(index) ? "selected" : ""
-              }
-            >
-              <button onClick={() => updateCategory(String(index))}>
-                <img src={c.imageUrl} />
-                {c.title}
-              </button>
-            </li>
-          ))}
-        </ol>
-      </div>
-      <div className="content">
-        <DeferRender>
-          {chunks.map((items, chunkIndex) => (
-            <div className="items-row" key={chunkIndex}>
-              {(items.filter(Boolean) as CategoryItem[]).map((i, index) => {
-                const [qty, setQty] = useState(0);
-                const prefetch =
-                  i.variants.length > 1
-                    ? `options?item=${JSON.stringify(i)}&category=${id}`
-                    : null;
-                const onPlus = () => {
-                  if (prefetch) {
-                    navigate(prefetch);
-                    return;
-                  }
-                  return setQty((q) => q + 1);
-                };
-                const onMinus = () => setQty((q) => q - 1);
-                const [selectedVariant, setVariant] = useState(i.variants[0]);
+    <AnimateSharedLayout>
+      <div className="section">
+        <div className="sidebar">
+          <ol>
+            {categories.map((c, index) => (
+              <li
+                key={c.title}
+                className={
+                  searchParams.get("category") === String(index)
+                    ? "selected"
+                    : ""
+                }
+              >
+                <button onClick={() => updateCategory(String(index))}>
+                  <img src={c.imageUrl} />
+                  {c.title}
+                </button>
+              </li>
+            ))}
+          </ol>
+        </div>
+        <div className="content">
+          <DeferRender>
+            {chunks.map((items, chunkIndex) => (
+              <div className="items-row" key={chunkIndex}>
+                {(items.filter(Boolean) as CategoryItem[]).map((i, index) => {
+                  const [qty, setQty] = useState(0);
+                  const prefetch =
+                    i.variants.length > 1
+                      ? // TODO: Elegantly append just item to current set of search params
+                        `options?item=${JSON.stringify(
+                          i
+                        )}&category=${id}&title=${title}`
+                      : null;
+                  const onPlus = () => {
+                    if (prefetch) {
+                      navigate(prefetch);
+                      return;
+                    }
+                    return setQty((q) => q + 1);
+                  };
+                  const onMinus = () => setQty((q) => q - 1);
+                  const [selectedVariant, setVariant] = useState(i.variants[0]);
 
-                return (
-                  <React.Fragment key={i.id}>
-                    <ProductItem
-                      data={i}
-                      variant={selectedVariant}
-                      setVariant={setVariant}
-                      onPlus={onPlus}
-                      onMinus={onMinus}
-                      qty={qty}
-                      size="normal"
-                      className="category-product-item"
-                    />
-                    {prefetch ? <Link to={prefetch} prefetch="render" /> : null}
-                  </React.Fragment>
-                );
-              })}
-            </div>
-          ))}
-        </DeferRender>
-      </div>
-      <AnimatePresence>
+                  return (
+                    <React.Fragment key={i.id}>
+                      <ProductItem
+                        data={i}
+                        variant={selectedVariant}
+                        setVariant={setVariant}
+                        onPlus={onPlus}
+                        onMinus={onMinus}
+                        qty={qty}
+                        size="normal"
+                        className="category-product-item"
+                      />
+                      {prefetch ? (
+                        <Link to={prefetch} prefetch="render" />
+                      ) : null}
+                    </React.Fragment>
+                  );
+                })}
+              </div>
+            ))}
+          </DeferRender>
+        </div>
         <Outlet />
-      </AnimatePresence>
-    </div>
+      </div>
+    </AnimateSharedLayout>
   );
 }

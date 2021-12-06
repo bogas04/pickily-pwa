@@ -10,7 +10,6 @@ import {
 import type { LinksFunction } from "remix";
 
 import globalStylesUrl from "~/styles/global.css";
-import { AnimateSharedLayout } from "framer-motion";
 
 // https://remix.run/api/app#links
 export let links: LinksFunction = () => {
@@ -30,9 +29,7 @@ export default function App() {
   return (
     <Document>
       <Layout>
-        <AnimateSharedLayout>
-          <Outlet />
-        </AnimateSharedLayout>
+        <Outlet />
       </Layout>
     </Document>
   );
