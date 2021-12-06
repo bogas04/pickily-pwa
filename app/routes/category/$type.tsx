@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import {
   useNavigate,
   json,
@@ -17,7 +17,8 @@ import {
 } from "~/api/category.server";
 import { sleep } from "~/api/home.server";
 import ProductItem from "~/components/product-item";
-import { AnimatePresence, AnimateSharedLayout } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
+import { DeferRender } from "~/components/defer-render";
 
 // https://remix.run/api/conventions#loader
 export const loader: LoaderFunction = async ({ params }) => {
@@ -61,28 +62,26 @@ export default function Category() {
   );
 
   return (
-    <AnimateSharedLayout>
-      <div className="section">
-        <div className="sidebar">
-          <ol>
-            {categories.map((c, index) => (
-              <li
-                key={c.title}
-                className={
-                  searchParams.get("category") === String(index)
-                    ? "selected"
-                    : ""
-                }
-              >
-                <button onClick={() => updateCategory(String(index))}>
-                  <img src={c.imageUrl} />
-                  {c.title}
-                </button>
-              </li>
-            ))}
-          </ol>
-        </div>
-        <div className="content">
+    <div className="section">
+      <div className="sidebar">
+        <ol>
+          {categories.map((c, index) => (
+            <li
+              key={c.title}
+              className={
+                searchParams.get("category") === String(index) ? "selected" : ""
+              }
+            >
+              <button onClick={() => updateCategory(String(index))}>
+                <img src={c.imageUrl} />
+                {c.title}
+              </button>
+            </li>
+          ))}
+        </ol>
+      </div>
+      <div className="content">
+        <DeferRender>
           {chunks.map((items) => (
             <div className="items-row">
               {(items.filter(Boolean) as CategoryItem[]).map((i, index) => {
@@ -112,11 +111,11 @@ export default function Category() {
               })}
             </div>
           ))}
-        </div>
-        <AnimatePresence>
-          <Outlet />
-        </AnimatePresence>
+        </DeferRender>
       </div>
-    </AnimateSharedLayout>
+      <AnimatePresence>
+        <Outlet />
+      </AnimatePresence>
+    </div>
   );
 }
