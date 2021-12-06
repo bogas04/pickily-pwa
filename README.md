@@ -1,3 +1,17 @@
+# My thoughts on making this PWA PoC
+
+- Some of the features of react-router/remix are essential in building app like interfaces where the back button actually closes a modal/dialog, for example.
+- framer-motion makes shared element transitions quite simple, but I'm not too sure about its runtime cost and some of the bugs I'm facing (pretty sure I'm using it incorrectly)
+- vercel provides excellent CD experience with preview links for branches & PRs.
+  - deployments through vercel go through in under a minute
+- interactions do take quite a bit of time on an old 7xx Snapdragon phone, I notice it a lot during route transitions
+  - Maybe the way I use framer-motion in [ScreenTransition](./app/components/ScreenTransition.tsx) isn't quite performant.
+  - Mounting and unmounting large DOM trees is surely a bottleneck. Deferred Rendering helps but ideally we'd like to wait for Concurrent Rendering from react team
+- bubblewrap & PWABuilder helped in making the PWA within 1 hour
+  - there's a bug with PWABuilder generated apk where killing default browser (if it's not Chrome) from recent apps causes app to freeze at splash screen
+
+---
+
 # Welcome to Remix!
 
 - [Remix Docs](https://remix.run/docs)
