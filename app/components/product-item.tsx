@@ -38,7 +38,12 @@ export default function ProductItem({
     return (
       <section className={`product-item ${className}`}>
         <div className="product-item-img-wrapper">
-          <img src={data.imageUrl} alt={`Picture of ${data.title}`} />
+          <img
+            height={84}
+            width={84}
+            src={data.imageUrl}
+            alt={`Picture of ${data.title}`}
+          />
           <QuantitySelector
             value={qty}
             size={size}
