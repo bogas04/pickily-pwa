@@ -1,0 +1,300 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<!--
+3    Copyright 2019 Google Inc. All Rights Reserved.
+4
+5     Licensed under the Apache License, Version 2.0 (the "License");
+6     you may not use this file except in compliance with the License.
+7     You may obtain a copy of the License at
+8
+9         http://www.apache.org/licenses/LICENSE-2.0
+10
+11     Unless required by applicable law or agreed to in writing, software
+12     distributed under the License is distributed on an "AS IS" BASIS,
+13     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+14     See the License for the specific language governing permissions and
+15     limitations under the License.
+16-->
+17<!--
+18 The "package" attribute is rewritten by the Gradle build with the value of applicationId.
+19     It is still required here, as it is used to derive paths, for instance when referring
+20     to an Activity by ".MyActivity" instead of the full name. If more Activities are added to the
+21     application, the package attribute will need to reflect the correct path in order to use
+22     the abbreviated format.
+23-->
+24<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+25    package="app.vercel.pickily_pwa.twa"
+26    android:versionCode="1"
+27    android:versionName="1" >
+28
+29    <uses-sdk
+30        android:minSdkVersion="19"
+30-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml
+31        android:targetSdkVersion="31" />
+31-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml
+32
+33    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+33-->[com.google.androidbrowserhelper:locationdelegation:1.0.1] /Users/bogas04/.gradle/caches/transforms-2/files-2.1/6533a4776060e2dafc326b30a0222ee1/locationdelegation-1.0.1/AndroidManifest.xml:11:5-79
+33-->[com.google.androidbrowserhelper:locationdelegation:1.0.1] /Users/bogas04/.gradle/caches/transforms-2/files-2.1/6533a4776060e2dafc326b30a0222ee1/locationdelegation-1.0.1/AndroidManifest.xml:11:22-76
+34
+35    <queries>
+35-->[com.google.androidbrowserhelper:androidbrowserhelper:2.3.0] /Users/bogas04/.gradle/caches/transforms-2/files-2.1/572def1352afcb56982bb86acf89682d/androidbrowserhelper-2.3.0/AndroidManifest.xml:26:5-34:15
+36        <intent>
+36-->[com.google.androidbrowserhelper:androidbrowserhelper:2.3.0] /Users/bogas04/.gradle/caches/transforms-2/files-2.1/572def1352afcb56982bb86acf89682d/androidbrowserhelper-2.3.0/AndroidManifest.xml:27:9-33:18
+37            <action android:name="android.intent.action.VIEW" />
+37-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:123:17-68
+37-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:123:25-66
+38
+39            <category android:name="android.intent.category.BROWSABLE" />
+39-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:125:17-77
+39-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:125:27-75
+40
+41            <data android:scheme="https" />
+41-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:126:17-127:54
+41-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:126:23-45
+42        </intent>
+43    </queries>
+44
+45    <application
+45-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:29:5-169:19
+46        android:name="app.vercel.pickily_pwa.twa.Application"
+46-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:30:9-35
+47        android:allowBackup="true"
+47-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:31:9-35
+48        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+48-->[androidx.core:core:1.1.0] /Users/bogas04/.gradle/caches/transforms-2/files-2.1/e601daed4ba62929db8b322b2974c8f8/core-1.1.0/AndroidManifest.xml:24:18-86
+49        android:icon="@mipmap/ic_launcher"
+49-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:32:9-43
+50        android:label="@string/appName"
+50-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:33:9-40
+51        android:manageSpaceActivity="com.google.androidbrowserhelper.trusted.ManageDataLauncherActivity"
+51-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:35:9-105
+52        android:supportsRtl="true"
+52-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:37:9-35
+53        android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+53-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:38:9-68
+54        <meta-data
+54-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:40:9-42:58
+55            android:name="asset_statements"
+55-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:41:13-44
+56            android:resource="@string/assetStatements" />
+56-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:42:13-55
+57        <meta-data
+57-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:45:13-47:58
+58            android:name="web_manifest_url"
+58-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:46:17-48
+59            android:value="@string/webManifestUrl" />
+59-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:47:17-55
+60        <meta-data
+60-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:50:9-52:52
+61            android:name="twa_generator"
+61-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:51:13-41
+62            android:value="@string/generatorApp" />
+62-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:52:13-49
+63
+64        <activity android:name="com.google.androidbrowserhelper.trusted.ManageDataLauncherActivity" >
+64-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:55:13-59:24
+64-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:55:23-104
+65            <meta-data
+65-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:56:13-58:53
+66                android:name="android.support.customtabs.trusted.MANAGE_SPACE_URL"
+66-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:57:17-83
+67                android:value="@string/launchUrl" />
+67-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:58:17-50
+68        </activity>
+69        <activity
+69-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:62:9-131:20
+70            android:name="app.vercel.pickily_pwa.twa.LauncherActivity"
+70-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:62:19-50
+71            android:alwaysRetainTaskState="true"
+71-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:63:13-49
+72            android:exported="true"
+72-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:65:13-36
+73            android:label="@string/launcherName" >
+73-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:64:13-49
+74            <meta-data
+74-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:66:13-67:53
+75                android:name="android.support.customtabs.trusted.DEFAULT_URL"
+75-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:66:24-85
+76                android:value="@string/launchUrl" />
+76-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:67:17-50
+77            <meta-data
+77-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:69:13-71:58
+78                android:name="android.support.customtabs.trusted.STATUS_BAR_COLOR"
+78-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:70:17-83
+79                android:resource="@color/colorPrimary" />
+79-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:71:17-55
+80            <meta-data
+80-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:73:13-75:61
+81                android:name="android.support.customtabs.trusted.NAVIGATION_BAR_COLOR"
+81-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:74:17-87
+82                android:resource="@color/navigationColor" />
+82-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:75:17-58
+83            <meta-data
+83-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:77:13-79:65
+84                android:name="android.support.customtabs.trusted.NAVIGATION_BAR_COLOR_DARK"
+84-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:78:17-92
+85                android:resource="@color/navigationColorDark" />
+85-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:79:17-62
+86            <meta-data
+86-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:81:13-83:68
+87                android:name="androix.browser.trusted.NAVIGATION_BAR_DIVIDER_COLOR"
+87-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:82:17-84
+88                android:resource="@color/navigationDividerColor" />
+88-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:83:17-65
+89            <meta-data
+89-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:85:13-87:72
+90                android:name="androix.browser.trusted.NAVIGATION_BAR_DIVIDER_COLOR_DARK"
+90-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:86:17-89
+91                android:resource="@color/navigationDividerColorDark" />
+91-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:87:17-69
+92            <meta-data
+92-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:89:13-90:54
+93                android:name="android.support.customtabs.trusted.SPLASH_IMAGE_DRAWABLE"
+93-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:89:24-95
+94                android:resource="@drawable/splash" />
+94-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:90:17-52
+95            <meta-data
+95-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:92:13-93:60
+96                android:name="android.support.customtabs.trusted.SPLASH_SCREEN_BACKGROUND_COLOR"
+96-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:92:24-104
+97                android:resource="@color/backgroundColor" />
+97-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:93:17-58
+98            <meta-data
+98-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:95:13-96:71
+99                android:name="android.support.customtabs.trusted.SPLASH_SCREEN_FADE_OUT_DURATION"
+99-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:95:24-105
+100                android:value="@integer/splashScreenFadeOutDuration" />
+100-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:96:17-69
+101            <meta-data
+101-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:98:13-99:60
+102                android:name="android.support.customtabs.trusted.FILE_PROVIDER_AUTHORITY"
+102-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:98:24-97
+103                android:value="@string/providerAuthority" />
+103-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:99:17-58
+104            <meta-data
+104-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:101:13-97
+105                android:name="android.app.shortcuts"
+105-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:101:24-60
+106                android:resource="@xml/shortcuts" />
+106-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:101:61-94
+107            <meta-data
+107-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:103:13-104:56
+108                android:name="android.support.customtabs.trusted.FALLBACK_STRATEGY"
+108-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:103:24-91
+109                android:value="@string/fallbackType" />
+109-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:104:17-53
+110            <meta-data
+110-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:110:13-111:54
+111                android:name="android.support.customtabs.trusted.SCREEN_ORIENTATION"
+111-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:110:24-92
+112                android:value="@string/orientation" />
+112-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:111:17-52
+113
+114            <intent-filter>
+114-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:117:13-120:29
+115                <action android:name="android.intent.action.MAIN" />
+115-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:118:17-69
+115-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:118:25-66
+116
+117                <category android:name="android.intent.category.LAUNCHER" />
+117-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:119:17-77
+117-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:119:27-74
+118            </intent-filter>
+119            <intent-filter android:autoVerify="true" >
+119-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:122:13-128:29
+119-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:122:28-53
+120                <action android:name="android.intent.action.VIEW" />
+120-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:123:17-68
+120-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:123:25-66
+121
+122                <category android:name="android.intent.category.DEFAULT" />
+122-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:124:17-76
+122-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:124:27-73
+123                <category android:name="android.intent.category.BROWSABLE" />
+123-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:125:17-77
+123-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:125:27-75
+124
+125                <data
+125-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:126:17-127:54
+126                    android:host="@string/hostName"
+126-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:127:21-52
+127                    android:scheme="https" />
+127-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:126:23-45
+128            </intent-filter>
+129        </activity>
+130        <activity android:name="com.google.androidbrowserhelper.trusted.FocusActivity" />
+130-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:133:9-90
+130-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:133:19-87
+131        <activity
+131-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:135:9-136:62
+132            android:name="com.google.androidbrowserhelper.trusted.WebViewFallbackActivity"
+132-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:135:19-97
+133            android:configChanges="orientation|screenSize" />
+133-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:136:13-59
+134
+135        <provider
+135-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:138:9-146:20
+136            android:name="androidx.core.content.FileProvider"
+136-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:139:13-62
+137            android:authorities="@string/providerAuthority"
+137-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:140:13-60
+138            android:exported="false"
+138-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:142:13-37
+139            android:grantUriPermissions="true" >
+139-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:141:13-47
+140            <meta-data
+140-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:143:13-145:53
+141                android:name="android.support.FILE_PROVIDER_PATHS"
+141-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:144:17-67
+142                android:resource="@xml/filepaths" />
+142-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:145:17-50
+143        </provider>
+144
+145        <service
+145-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:148:9-163:19
+146            android:name="app.vercel.pickily_pwa.twa.DelegationService"
+146-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:149:13-46
+147            android:enabled="@bool/enableNotification"
+147-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:150:13-55
+148            android:exported="@bool/enableNotification" >
+148-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:151:13-56
+149            <meta-data
+149-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:154:17-156:73
+150                android:name="android.support.customtabs.trusted.SMALL_ICON"
+150-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:155:21-81
+151                android:resource="@drawable/ic_notification_icon" />
+151-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:156:21-70
+152
+153            <intent-filter>
+153-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:159:13-162:29
+154                <action android:name="android.support.customtabs.trusted.TRUSTED_WEB_ACTIVITY_SERVICE" />
+154-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:160:17-105
+154-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:160:25-103
+155
+156                <category android:name="android.intent.category.DEFAULT" />
+156-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:124:17-76
+156-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:124:27-73
+157            </intent-filter>
+158        </service>
+159
+160        <activity android:name="com.google.androidbrowserhelper.locationdelegation.PermissionRequestActivity" />
+160-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:166:13-167:89
+160-->/Users/bogas04/Work/picikily-pwa/app/src/main/AndroidManifest.xml:166:23-123
+161        <activity
+161-->[com.google.android.gms:play-services-base:17.0.0] /Users/bogas04/.gradle/caches/transforms-2/files-2.1/af7ff4cdb9585a03f0fe804445629944/play-services-base-17.0.0/AndroidManifest.xml:23:9-26:75
+162            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+162-->[com.google.android.gms:play-services-base:17.0.0] /Users/bogas04/.gradle/caches/transforms-2/files-2.1/af7ff4cdb9585a03f0fe804445629944/play-services-base-17.0.0/AndroidManifest.xml:24:13-79
+163            android:exported="false"
+163-->[com.google.android.gms:play-services-base:17.0.0] /Users/bogas04/.gradle/caches/transforms-2/files-2.1/af7ff4cdb9585a03f0fe804445629944/play-services-base-17.0.0/AndroidManifest.xml:25:13-37
+164            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+164-->[com.google.android.gms:play-services-base:17.0.0] /Users/bogas04/.gradle/caches/transforms-2/files-2.1/af7ff4cdb9585a03f0fe804445629944/play-services-base-17.0.0/AndroidManifest.xml:26:13-72
+165
+166        <meta-data
+166-->[com.google.android.gms:play-services-basement:17.0.0] /Users/bogas04/.gradle/caches/transforms-2/files-2.1/937c5050898784d30c656655e5f36fd6/play-services-basement-17.0.0/AndroidManifest.xml:23:9-25:69
+167            android:name="com.google.android.gms.version"
+167-->[com.google.android.gms:play-services-basement:17.0.0] /Users/bogas04/.gradle/caches/transforms-2/files-2.1/937c5050898784d30c656655e5f36fd6/play-services-basement-17.0.0/AndroidManifest.xml:24:13-58
+168            android:value="@integer/google_play_services_version" />
+168-->[com.google.android.gms:play-services-basement:17.0.0] /Users/bogas04/.gradle/caches/transforms-2/files-2.1/937c5050898784d30c656655e5f36fd6/play-services-basement-17.0.0/AndroidManifest.xml:25:13-66
+169    </application>
+170
+171</manifest>

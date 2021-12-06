@@ -1,0 +1,4 @@
+#Mon Dec 06 16:23:51 IST 2021
+base.0=/Users/bogas04/Work/picikily-pwa/app/build/intermediates/dex/release/minifyReleaseWithR8/classes.dex
+path.0=classes.dex
+renamed.0=classes.dex

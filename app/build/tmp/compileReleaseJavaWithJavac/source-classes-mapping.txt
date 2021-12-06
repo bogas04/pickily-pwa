@@ -1,0 +1,8 @@
+app/vercel/pickily_pwa/twa/DelegationService.java
+ app.vercel.pickily_pwa.twa.DelegationService
+app/vercel/pickily_pwa/twa/LauncherActivity.java
+ app.vercel.pickily_pwa.twa.LauncherActivity
+app/vercel/pickily_pwa/twa/Application.java
+ app.vercel.pickily_pwa.twa.Application
+app/vercel/pickily_pwa/twa/BuildConfig.java
+ app.vercel.pickily_pwa.twa.BuildConfig
