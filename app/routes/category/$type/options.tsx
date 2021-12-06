@@ -21,15 +21,17 @@ export default function Options() {
 
   return (
     <>
-      <div
+      <MotionDiv
         className="category-options-overlay"
         onClick={() => navigate("..")}
+        initial={{ opacity: 0.3 }}
+        animate={{ opacity: 0.5 }}
       />
       <MotionDiv
         className="category-options"
-        initial={{ top: "100%" }}
+        initial={{ y: 200 }}
         transition={{ duration: 0.25 }}
-        animate={{ top: "auto" }}
+        animate={{ y: 0 }}
       >
         <div className="header">
           <MotionImage
@@ -37,7 +39,6 @@ export default function Options() {
             height={48}
             width={48}
             layoutId={`photo-${item.id}`}
-            transition={{ delay: 0.05 }}
           />
           <div>
             <h6>Available Options for</h6>
