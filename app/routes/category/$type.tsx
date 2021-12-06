@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
+  Link,
   useNavigate,
   json,
   Outlet,
@@ -82,13 +83,17 @@ export default function Category() {
       </div>
       <div className="content">
         <DeferRender>
-          {chunks.map((items) => (
-            <div className="items-row">
+          {chunks.map((items, chunkIndex) => (
+            <div className="items-row" key={chunkIndex}>
               {(items.filter(Boolean) as CategoryItem[]).map((i, index) => {
                 const [qty, setQty] = useState(0);
+                const prefetch =
+                  i.variants.length > 1
+                    ? `options?item=${JSON.stringify(i)}`
+                    : null;
                 const onPlus = () => {
-                  if (i.variants.length > 1) {
-                    navigate(`options?item=${JSON.stringify(i)}`);
+                  if (prefetch) {
+                    navigate(prefetch);
                     return;
                   }
                   return setQty((q) => q + 1);
@@ -97,16 +102,19 @@ export default function Category() {
                 const [selectedVariant, setVariant] = useState(i.variants[0]);
 
                 return (
-                  <ProductItem
-                    data={i}
-                    variant={selectedVariant}
-                    setVariant={setVariant}
-                    onPlus={onPlus}
-                    onMinus={onMinus}
-                    qty={qty}
-                    size="normal"
-                    className="category-product-item"
-                  />
+                  <React.Fragment key={i.id}>
+                    <ProductItem
+                      data={i}
+                      variant={selectedVariant}
+                      setVariant={setVariant}
+                      onPlus={onPlus}
+                      onMinus={onMinus}
+                      qty={qty}
+                      size="normal"
+                      className="category-product-item"
+                    />
+                    {prefetch ? <Link to={prefetch} prefetch="render" /> : null}
+                  </React.Fragment>
                 );
               })}
             </div>

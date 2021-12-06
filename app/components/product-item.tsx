@@ -103,6 +103,7 @@ export default function ProductItem({
         ) : (
           <select
             className="product-item-variant"
+            defaultValue={variant.value}
             onChange={(e) =>
               setVariant(
                 data.variants.find((v) => v.value === e.currentTarget.value)!
@@ -110,7 +111,7 @@ export default function ProductItem({
             }
           >
             {data.variants.map((v) => (
-              <option value={v.value} selected={v.value === variant.value}>
+              <option value={v.value} key={v.value}>
                 {v.value}
               </option>
             ))}
