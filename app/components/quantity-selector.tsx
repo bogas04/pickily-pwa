@@ -19,7 +19,7 @@ export function QuantitySelector(props: QuantitySelectorProps) {
     if (props.size === "mini") {
       return (
         <div className={`quantity-button ${props.className}`.trim()}>
-          <button onClick={() => props.onPlus()}>
+          <button onClick={() => props.onPlus()} aria-label="Add 1 more">
             <Plus />
           </button>
         </div>
@@ -43,11 +43,11 @@ export function QuantitySelector(props: QuantitySelectorProps) {
       <div
         className={`quantity-button quantity-button-expanded ${props.className}`.trim()}
       >
-        <button onClick={() => props.onMinus()}>
+        <button onClick={() => props.onMinus()} aria-label="Reduce by one">
           <Minus />
         </button>
         {props.value}
-        <button onClick={() => props.onPlus()}>
+        <button onClick={() => props.onPlus()} aria-label="Add 1 more">
           <Plus />
         </button>
       </div>
@@ -58,11 +58,11 @@ export function QuantitySelector(props: QuantitySelectorProps) {
     <div
       className={`quantity-button-normal quantity-button-expanded ${props.className}`.trim()}
     >
-      <button onClick={() => props.onMinus()}>
+      <button onClick={() => props.onMinus()} aria-label="Reduce by one">
         <Minus />
       </button>
       {props.value}
-      <button onClick={() => props.onPlus()}>
+      <button onClick={() => props.onPlus()} aria-label="Add 1 more">
         <Plus />
       </button>
     </div>
