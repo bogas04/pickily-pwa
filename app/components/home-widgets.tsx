@@ -201,8 +201,10 @@ export function BrowseCategoryWidget({
       <Link
         to={`/category/${data.type}?id=${data.id}&title=${data.title}`}
         prefetch="render"
+        title={data.title}
       >
         <img
+          alt="Browse by Category"
           style={{ margin: "0 -16px", width: "calc(100% + 32px)" }}
           src="/img/category.png"
         />
