@@ -23,7 +23,7 @@ export default function Options() {
     <>
       <MotionDiv
         className="category-options-overlay"
-        onClick={() => navigate("..")}
+        onClick={() => navigate(-1)}
         initial={{ opacity: 0.3 }}
         animate={{ opacity: 0.5 }}
       />
