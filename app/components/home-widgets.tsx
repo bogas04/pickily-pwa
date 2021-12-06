@@ -101,7 +101,12 @@ export function ProductStoryWidget({
           const onMinus = () => setQty((q) => q - 1);
           return (
             <li key={x.id}>
-              <img src={x.imageUrl} alt={x.title + "\n" + x.description} />
+              <img
+                height={148}
+                width={240}
+                src={x.imageUrl}
+                alt={x.title + "\n" + x.description}
+              />
               <QuantitySelector
                 className="inline-quantity-button"
                 value={qty}
@@ -130,7 +135,12 @@ export function OfferBannerWidget({
           const onMinus = () => setQty((q) => q - 1);
           return (
             <li key={x.id}>
-              <img src={x.imageUrl} alt={x.title + "\n" + x.description} />
+              <img
+                height={192}
+                width={144}
+                src={x.imageUrl}
+                alt={x.title + "\n" + x.description}
+              />
               <QuantitySelector
                 className="inline-quantity-button "
                 value={qty}
