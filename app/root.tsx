@@ -11,6 +11,7 @@ import type { LinksFunction } from "remix";
 
 import globalStylesUrl from "~/styles/global.css";
 import { AnimateSharedLayout } from "framer-motion";
+import { useEffect } from "react";
 
 // https://remix.run/api/app#links
 export let links: LinksFunction = () => {
@@ -101,11 +102,15 @@ function Document({
   children: React.ReactNode;
   title?: string;
 }) {
+  useEffect(() => {
+    window?.navigator?.serviceWorker?.register("/sw.js");
+  }, []);
   return (
     <html lang="en">
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <link rel="manifest" href="manifest.json" />
         {title ? <title>{title}</title> : null}
         <Meta />
         <Links />
