@@ -1,5 +1,5 @@
 import type { LinksFunction } from "remix";
-import { Link, Outlet, useLocation } from "remix";
+import { Link, Outlet, useSearchParams } from "remix";
 import { Back, Search } from "~/components/icons";
 import { productItemStylesUrl } from "~/components/product-item";
 import { quantitySelectorStylesUrl } from "~/components/quantity-selector";
@@ -23,7 +23,9 @@ export let links: LinksFunction = () => [
 ];
 
 export default function () {
-  const { state } = useLocation();
+  const [sp] = useSearchParams();
+
+  const title = sp.get("title");
   return (
     <ScreenTransition>
       <header>
@@ -31,7 +33,7 @@ export default function () {
           <Link to="..">
             <Back />
           </Link>
-          <h1>{state?.title || "All Items"}</h1>
+          <h1>{title || "All Items"}</h1>
         </div>
         <div>
           <button className="search">

@@ -41,9 +41,8 @@ export function BuyAgainWidget({
           <p>{data.description}</p>
         </div>
         <Link
-          to={`/category/${data.type}?id=${data.id}`}
-          prefetch="intent"
-          state={{ title: data.title }}
+          to={`/category/${data.type}?id=${data.id}&title=${data.title}`}
+          prefetch="render"
           className="view-all"
         >
           View All <Caret style={{ transform: "rotate(-90deg)" }} />
@@ -87,8 +86,8 @@ export function ProductStoryWidget({
           <p>{data.description}</p>
         </div>
         <Link
-          to={`/category/${data.type}?id=${data.id}`}
-          prefetch="intent"
+          to={`/category/${data.type}?id=${data.id}&title=${data.title}`}
+          prefetch="render"
           className="view-all"
         >
           View All <Caret style={{ transform: "rotate(-90deg)" }} />
@@ -168,8 +167,8 @@ export function BrandCollectionWidget({
           <p>{data.description}</p>
         </div>
         <Link
-          to={`/category/${data.type}?id=${data.id}`}
-          prefetch="intent"
+          to={`/category/${data.type}?id=${data.id}&title=${data.title}`}
+          prefetch="render"
           className="view-all"
         >
           View All <Caret style={{ transform: "rotate(-90deg)" }} />
@@ -178,7 +177,10 @@ export function BrandCollectionWidget({
       <ol>
         {data.items.map((x, index) => (
           <li key={x.id}>
-            <Link to={`/category/${data.type}?id=${data.id}`} prefetch="intent">
+            <Link
+              to={`/category/${data.type}?id=${data.id}&title=${data.title}`}
+              prefetch="render"
+            >
               <img src={x.imageUrl} alt={x.title + "\n" + x.description} />
             </Link>
           </li>
@@ -196,7 +198,10 @@ export function BrowseCategoryWidget({
   return (
     <section className="browse-category-widget">
       <h2>Browse by Category</h2>
-      <Link to={`/category/${data.type}?id=${data.id}`} prefetch="intent">
+      <Link
+        to={`/category/${data.type}?id=${data.id}&title=${data.title}`}
+        prefetch="render"
+      >
         <img
           style={{ margin: "0 -16px", width: "calc(100% + 32px)" }}
           src="/img/category.png"
