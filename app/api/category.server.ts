@@ -10,10 +10,17 @@ export type CategoryItem = Extract<
   { type: "buy-again" }
 >["items"][0];
 
+function shuffleArray<T extends Array<any>>(array: T) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
 export async function getCategoryItems(id: string) {
   const items: CategoryItem[] = [
     {
-      id: "1",
+      id: id + "-1",
       title: "Fresh Pomegranate",
       imageUrl: "/img/pomegranate.png",
       tag: "instant",
@@ -24,7 +31,7 @@ export async function getCategoryItems(id: string) {
       ],
     },
     {
-      id: "2",
+      id: id + "-2",
       title: "Cherry",
       imageUrl: "/img/cherry.png",
       tag: "morning",
@@ -32,7 +39,7 @@ export async function getCategoryItems(id: string) {
       variants: [{ value: "5 Kg", price: 325, discountedPrice: 222 }],
     },
     {
-      id: "3",
+      id: id + "-3",
       title: "Coconut",
       tag: "instant",
       imageUrl: "/img/coconut.png",
@@ -40,7 +47,7 @@ export async function getCategoryItems(id: string) {
       variants: [{ value: "5 Kg", price: 325, discountedPrice: 222 }],
     },
     {
-      id: "4",
+      id: id + "-4",
       title: "Pear",
       imageUrl: "/img/pear.png",
       tag: "instant",
@@ -48,7 +55,7 @@ export async function getCategoryItems(id: string) {
       variants: [{ value: "5 Kg", price: 325, discountedPrice: 222 }],
     },
     {
-      id: "5",
+      id: id + "-5",
       title: "Fresh Pomegranate",
       imageUrl: "/img/pomegranate.png",
       tag: "instant",
@@ -59,7 +66,7 @@ export async function getCategoryItems(id: string) {
       ],
     },
     {
-      id: "6",
+      id: id + "-6",
       title: "Cherry",
       imageUrl: "/img/cherry.png",
       tag: "morning",
@@ -67,7 +74,7 @@ export async function getCategoryItems(id: string) {
       variants: [{ value: "5 Kg", price: 325, discountedPrice: 222 }],
     },
     {
-      id: "7",
+      id: id + "-7",
       title: "Coconut",
       tag: "instant",
       imageUrl: "/img/coconut.png",
@@ -75,7 +82,7 @@ export async function getCategoryItems(id: string) {
       variants: [{ value: "5 Kg", price: 325, discountedPrice: 222 }],
     },
     {
-      id: "8",
+      id: id + "-8",
       title: "Pear",
       imageUrl: "/img/pear.png",
       tag: "instant",
@@ -84,7 +91,7 @@ export async function getCategoryItems(id: string) {
     },
   ];
 
-  return { data: items };
+  return { data: shuffleArray(items) };
 }
 
 export async function getCategories() {

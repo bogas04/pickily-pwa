@@ -22,11 +22,13 @@ import { AnimatePresence } from "framer-motion";
 import { DeferRender } from "~/components/defer-render";
 
 // https://remix.run/api/conventions#loader
-export const loader: LoaderFunction = async ({ params }) => {
+export const loader: LoaderFunction = async ({ params, request }) => {
   // mock API latency
   await sleep(100);
   const { data: categories } = await getCategories();
-  const { data: items } = await getCategoryItems(String(params.id));
+  const { data: items } = await getCategoryItems(
+    new URL(request.url).searchParams.get("category") as string
+  );
   return json({ categories, items });
 };
 
