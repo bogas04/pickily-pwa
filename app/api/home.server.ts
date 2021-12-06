@@ -239,7 +239,7 @@ export async function getHomeWidgets(): Promise<HomeWidgetsResponse> {
         imageUrl: "img/collection-modern.png",
       },
       {
-        id: "2",
+        id: "3",
         title: "Kellogs",
         description: "UPTO 25% OFF",
         imageUrl: "img/collection-kellogs.png",

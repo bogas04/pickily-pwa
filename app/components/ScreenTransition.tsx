@@ -1,5 +1,6 @@
 import React from "react";
 import { AnimatePresence, createDomMotionComponent } from "framer-motion";
+import { DeferRender } from "./defer-render";
 const MotionDiv = createDomMotionComponent("div");
 
 export function ScreenTransition({ children }: { children: React.ReactNode }) {

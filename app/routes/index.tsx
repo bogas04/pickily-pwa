@@ -10,6 +10,7 @@ import { quantitySelectorStylesUrl } from "~/components/quantity-selector";
 import styles from "~/styles/index.css";
 import { createDomMotionComponent } from "framer-motion";
 import { ScreenTransition } from "~/components/ScreenTransition";
+import { DeferRender } from "~/components/defer-render";
 const MotionDiv = createDomMotionComponent("div");
 
 // https://remix.run/api/conventions#meta
@@ -57,7 +58,7 @@ export default function Index() {
   const data = useLoaderData<HomeWidgetsResponse>();
 
   return (
-    <ScreenTransition>
+    <>
       <header className="index-header">
         <div className="index-header-heading">
           <div>
@@ -86,9 +87,11 @@ export default function Index() {
         </div>
       </header>
       <main className="index-main">
-        <HomeWidgets data={data} />
+        <DeferRender>
+          <HomeWidgets data={data} />
+        </DeferRender>
       </main>
       <Footer />
-    </ScreenTransition>
+    </>
   );
 }

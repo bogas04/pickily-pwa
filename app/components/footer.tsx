@@ -59,8 +59,11 @@ function FooterLink(props: LinkProps) {
   );
 }
 
-function Home(props: HTMLAttributes<SVGElement> & { filled?: boolean }) {
-  if (!props.filled) {
+function Home({
+  filled,
+  ...props
+}: HTMLAttributes<SVGElement> & { filled?: boolean }) {
+  if (!filled) {
     return (
       <svg
         width={20}
@@ -102,8 +105,11 @@ function Home(props: HTMLAttributes<SVGElement> & { filled?: boolean }) {
   );
 }
 
-function Orders(props: HTMLAttributes<SVGElement> & { filled?: boolean }) {
-  if (!props.filled) {
+function Orders({
+  filled,
+  ...props
+}: HTMLAttributes<SVGElement> & { filled?: boolean }) {
+  if (!filled) {
     return (
       <svg
         width={20}
@@ -141,8 +147,11 @@ function Orders(props: HTMLAttributes<SVGElement> & { filled?: boolean }) {
   );
 }
 
-function Account(props: HTMLAttributes<SVGElement> & { filled?: boolean }) {
-  if (!props.filled) {
+function Account({
+  filled,
+  ...props
+}: HTMLAttributes<SVGElement> & { filled?: boolean }) {
+  if (!filled) {
     return (
       <svg
         width={20}

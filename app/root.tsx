@@ -109,7 +109,9 @@ function Document({
         {title ? <title>{title}</title> : null}
         <Meta />
         <Links />
-        <style>{`
+        <style
+          dangerouslySetInnerHTML={{
+            __html: `
           @font-face {
             font-family: ProximaNova;
             src: url('/proxima.ttf');
@@ -121,7 +123,9 @@ function Document({
             font-weight: bold;
             font-display: swap;
           }
-        `}</style>
+        `,
+          }}
+        />
       </head>
       <body>
         {children}
