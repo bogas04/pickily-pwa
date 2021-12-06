@@ -112,11 +112,13 @@ function Document({
           @font-face {
             font-family: ProximaNova;
             src: url('/proxima.ttf');
+            font-display: swap;
           }
           @font-face {
             font-family: ProximaNova;
             src: url('/proxima-bold.ttf');
             font-weight: bold;
+            font-display: swap;
           }
         `}</style>
       </head>
