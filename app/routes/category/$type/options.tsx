@@ -1,11 +1,18 @@
 import { useState } from "react";
 import { useNavigate, useSearchParams } from "remix";
-import type { LinksFunction } from "remix";
+import type { MetaFunction, LinksFunction } from "remix";
 import stylesUrl from "~/styles/category-options.css";
 import { CategoryItem } from "~/api/category.server";
 import { QuantitySelector } from "~/components/quantity-selector";
 import { Bolt } from "~/components/icons";
 import { createDomMotionComponent } from "framer-motion";
+
+export let meta: MetaFunction = ({ location }) => ({
+  title:
+    "Choose Option for " +
+    JSON.parse(new URLSearchParams(location.search).get("item") as string)
+      .title,
+});
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: stylesUrl },
