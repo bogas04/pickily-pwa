@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "app.vercel.pickily_pwa.twa",
+      "sha256_cert_fingerprints": [
+        "DD:A2:F1:F0:2A:9C:19:36:E0:0F:B1:5B:BD:70:BD:5E:26:E3:0E:76:D8:37:9A:B7:B6:92:AA:F6:30:C1:36:11"
+      ]
+    }
+  }
+]
