@@ -40,6 +40,7 @@
 .quantity-button-normal {
   height: 40px;
   width: 80px;
+  position: relative;
 }
 
 .quantity-button-normal button {
@@ -89,4 +90,18 @@
 .quantity-button-normal button:active {
   transform: scale(1.01);
   background-color: #fafafa;
+}
+
+.quantity-button-normal .quantity-selector-options {
+  position: absolute;
+  text-align: center;
+  bottom: -10px;
+  left: 10px;
+  font-weight: 600;
+  font-size: 10px;
+  line-height: 12px;
+  text-align: center;
+  color: #98a2b3;
+  background-color: white;
+  padding: 2px 4px;
 }

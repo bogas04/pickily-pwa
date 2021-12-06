@@ -10,6 +10,7 @@ export interface QuantitySelectorProps {
   disabled?: boolean;
   onPlus: VoidFunction;
   onMinus: VoidFunction;
+  withOptions?: boolean;
   className?: string;
 }
 
@@ -30,6 +31,9 @@ export function QuantitySelector(props: QuantitySelectorProps) {
           ADD
           <Plus />
         </button>
+        {props.withOptions ? (
+          <div className="quantity-selector-options">View Options</div>
+        ) : null}
       </div>
     );
   }

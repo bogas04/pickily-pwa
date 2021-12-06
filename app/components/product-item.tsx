@@ -85,20 +85,24 @@ export default function ProductItem({
           <img src={data.imageUrl} alt={`Picture of ${data.title}`} />
         </div>
         <h3>{data.title}</h3>
-        <select
-          className="product-item-variant"
-          onChange={(e) =>
-            setVariant(
-              data.variants.find((v) => v.value === e.currentTarget.value)!
-            )
-          }
-        >
-          {data.variants.map((v) => (
-            <option value={v.value} selected={v.value === variant.value}>
-              {v.value}
-            </option>
-          ))}
-        </select>
+        {data.variants.length === 1 ? (
+          <span className="product-item-variant">{data.variants[0].value}</span>
+        ) : (
+          <select
+            className="product-item-variant"
+            onChange={(e) =>
+              setVariant(
+                data.variants.find((v) => v.value === e.currentTarget.value)!
+              )
+            }
+          >
+            {data.variants.map((v) => (
+              <option value={v.value} selected={v.value === variant.value}>
+                {v.value}
+              </option>
+            ))}
+          </select>
+        )}
         <div className="product-item-price-wrapper">
           <div className="product-item-price">
             <strong>₹{variant.discountedPrice}</strong>
@@ -108,6 +112,7 @@ export default function ProductItem({
             value={qty}
             size={size}
             className="inline-quantity-button"
+            withOptions={data.variants.length > 1}
             onPlus={onPlus}
             onMinus={onMinus}
           />
