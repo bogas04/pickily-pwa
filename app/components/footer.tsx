@@ -17,7 +17,7 @@ export function Footer() {
             </FooterLink>
           </li>
           <li>
-            <FooterLink to="orders">
+            <FooterLink to="/orders">
               <Orders
                 filled={pathname === "/orders"}
                 style={{ marginBottom: 4 }}
@@ -26,7 +26,7 @@ export function Footer() {
             </FooterLink>
           </li>
           <li>
-            <FooterLink to="account">
+            <FooterLink to="/account">
               <Account
                 filled={pathname === "/account"}
                 style={{ marginBottom: 4 }}
@@ -45,14 +45,8 @@ function FooterLink(props: LinkProps) {
   return (
     <Link
       {...props}
+      className="footer-link"
       style={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        textDecoration: "none",
-        fontWeight: 600,
-        fontSize: 12,
-        lineHeight: "16px",
         color: pathname === props.to ? "#039855" : "#667085",
       }}
     />

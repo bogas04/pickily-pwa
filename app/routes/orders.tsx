@@ -1,5 +1,6 @@
 import type { LinksFunction } from "remix";
 import { Footer, footerStylesUrl } from "~/components/footer";
+import { ScreenTransition } from "~/components/ScreenTransition";
 
 export let links: LinksFunction = () => [
   {
@@ -10,10 +11,12 @@ export let links: LinksFunction = () => [
 export default function () {
   return (
     <>
-      <h1>Orders Page WIP</h1>
-      <main style={{ flexGrow: 1 }}>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio,
-        aut.
+      <main style={{ flexGrow: 1, padding: 16 }}>
+        <ScreenTransition>
+          <h1>Orders Page WIP</h1>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio,
+          aut.
+        </ScreenTransition>
       </main>
       <Footer />
     </>
