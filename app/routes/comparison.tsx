@@ -28,7 +28,7 @@ export default function AppComparison() {
             `<span>${Number(v.duration).toFixed(2)} seconds</span>`
           )
         );
-    }, 100);
+    }, 2000);
   }, []);
   return (
     <div className="main-wrapper">
