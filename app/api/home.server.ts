@@ -122,6 +122,44 @@ export async function getHomeWidgets(): Promise<HomeWidgetsResponse> {
         discountPercentage: 25,
         variants: [{ value: "5 Kg", price: 325, discountedPrice: 222 }],
       },
+      {
+        id: "9",
+        title: "Pumpkin",
+        imageUrl: "/img/pumpkin.png",
+        tag: "instant",
+        discountPercentage: 25,
+        variants: [
+          { value: "5 Kg", price: 325, discountedPrice: 222 },
+          { value: "1 Kg", price: 82, discountedPrice: 44 },
+        ],
+      },
+      {
+        id: "10",
+        title: "Snake Gourd",
+        imageUrl: "/img/snake.png",
+        tag: "morning",
+        discountPercentage: 25,
+        variants: [{ value: "5 Kg", price: 325, discountedPrice: 222 }],
+      },
+      {
+        id: "11",
+        title: "Suji",
+        tag: "instant",
+        imageUrl: "/img/suji.png",
+        discountPercentage: 25,
+        variants: [{ value: "5 Kg", price: 325, discountedPrice: 222 }],
+      },
+      {
+        id: "12",
+        title: "Tea",
+        imageUrl: "/img/tea.png",
+        tag: "instant",
+        discountPercentage: 25,
+        variants: [
+          { value: "5 Kg", price: 325, discountedPrice: 222 },
+          { value: "2 Kg", price: 100, discountedPrice: 89 },
+        ],
+      },
     ],
   };
 
