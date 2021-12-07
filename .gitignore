@@ -1,5 +1,7 @@
 node_modules
 
+app/styles
+
 .DS_Store
 
 .cache
