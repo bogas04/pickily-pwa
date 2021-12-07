@@ -12,6 +12,7 @@
   - there's a bug with PWABuilder generated apk where killing default browser (if it's not Chrome) from recent apps causes app to freeze at splash screen
 - Development time for making all the widgets, pages, server, deployment etc was extremely low. Took me a sunday+monday even if I used a new-ish framework around react. I think we can get much more web devs > RN devs > Flutter devs with similar proficiency.
 - Remix's dev env runs in 325ms. The feedback loop is very quick compared to an emulator.
+- vercel.app is a free-tier hosting service so it may not be the best one when it comes to Time To First Byte
 
 ---
 
