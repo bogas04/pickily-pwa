@@ -94,13 +94,13 @@
 
 .quantity-button-normal .quantity-selector-options {
   position: absolute;
-  bottom: -9 px;
-  left: 8 px;
+  bottom: -9px;
+  left: 8px;
   font-weight: 600;
   font-size: 10px;
   line-height: 12px;
   text-align: center;
   color: #98a2b3;
   background-color: white;
-  padding: 0 2 px;
+  padding: 0 2px;
 }
