@@ -2,6 +2,7 @@
 
 - Some of the features of react-router/remix are essential in building app like interfaces where the back button actually closes a modal/dialog, for example.
 - framer-motion makes shared element transitions quite simple, but I'm not too sure about its runtime cost and some of the bugs I'm facing (pretty sure I'm using it incorrectly)
+- While API response has been mocked, 100ms delay was added to simulate a somewhat ideal backend
 - vercel provides excellent CD experience with preview links for branches & PRs.
   - deployments through vercel go through in under a minute
 - interactions do take quite a bit of time on an old 7xx Snapdragon phone, I notice it a lot during route transitions
