@@ -21,7 +21,9 @@ self.addEventListener("fetch", (event) => {
         // if it's not cached we will run the fetch, cache it and return it
         // this way the next time this asset it's needed it will load from the cache
         let fetchResponse = await fetch(event.request);
-        cache.put(event.request, fetchResponse.clone());
+        if (new URL(event.request.url).protocol !== "chrome-extension:") {
+          cache.put(event.request, fetchResponse.clone());
+        }
 
         return fetchResponse;
       })
