@@ -80,7 +80,9 @@ export default function Options() {
             );
           })}
         </ol>
-        <button className="done">Done</button>
+        <button className="done" onClick={() => navigate(-1)}>
+          Done
+        </button>
       </MotionDiv>
     </>
   );
