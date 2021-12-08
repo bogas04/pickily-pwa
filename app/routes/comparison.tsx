@@ -18,18 +18,6 @@ export default function AppComparison() {
   const apps = ["react-native", "pwa", "flutter"];
   const types = ["startup", "forward", "backward"] as const;
 
-  useEffect(() => {
-    setTimeout(() => {
-      document
-        .querySelectorAll("video")
-        .forEach((v) =>
-          v.insertAdjacentHTML(
-            "beforebegin",
-            `<span>${Number(v.duration).toFixed(2)} seconds</span>`
-          )
-        );
-    }, 2000);
-  }, []);
   return (
     <div className="main-wrapper">
       <main>
@@ -52,7 +40,14 @@ export default function AppComparison() {
                     id={`${a}-${t}`}
                     src={`/video/${a} ${t}.mp4`}
                     onClick={() => window.open(`/video/${a} ${t}.mp4`)}
-                    height={200}
+                    onLoadedData={(e) => {
+                      const v = e.currentTarget;
+                      v.insertAdjacentHTML(
+                        "beforebegin",
+                        `<span>${Number(v.duration).toFixed(2)} seconds</span>`
+                      );
+                    }}
+                    height={500}
                   />
                 </div>
               ))}

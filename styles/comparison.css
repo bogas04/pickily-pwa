@@ -9,6 +9,7 @@ main {
   max-width: 1920px;
   width: 100%;
   padding: 24px;
+  overflow: auto;
 }
 
 .wrapper {
@@ -18,15 +19,19 @@ main {
 }
 
 .wrapper div {
+  flex-basis: 33%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-transform: uppercase;
+  font-weight: 600;
+  font-style: 20px;
 }
 
 .wrapper div span {
   text-transform: none;
+  font-weight: normal;
 }
 h2 {
   text-transform: capitalize;
